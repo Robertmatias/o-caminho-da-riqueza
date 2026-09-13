@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Caminho da Riqueza — De Zero a Riqueza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --card-bg: #111827;
+      --gold-primary: #f59e0b;
+      --gold-hover: #d97706;
+      --gold-light: #fef3c7;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .bg-glow {
+      background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.15) 0%, rgba(9, 13, 22, 1) 70%);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 40px;
+      color: var(--text-main);
+    }
+
+    .section-title span {
+      color: var(--gold-primary);
+    }
+
+    .hero {
+      padding: 60px 0 40px 0;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p.subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 750px;
+      margin: 0 auto 35px auto;
+    }
+
+    .hero-img-container {
+      margin: 30px auto;
+      max-width: 320px;
+      position: relative;
+    }
+
+    .book-cover {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 158, 11, 0.2);
+    }
+
+    .btn-cta {
+      display: inline-block;
+      width: 100%;
+      max-width: 450px;
+      background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-hover) 100%);
+      color: #000;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(245, 158, 11, 0.4);
+    }
+
+    .cta-subtext {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 25px;
+      border-radius: 12px;
+      transition: border 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--gold-primary);
+    }
+
+    .card-icon {
+      color: var(--gold-primary);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--text-main);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .target-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .target-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 18px 24px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .target-item span {
+      color: var(--gold-primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 30px;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--gold-light);
+      font-size: 0.95rem;
+    }
+
+    .guarantee-box {
+      background: linear-gradient(180deg, #1e1b4b 0%, var(--card-bg) 100%);
+      border: 1px solid var(--gold-primary);
+      border-radius: 16px;
+      padding: 40px 25px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .guarantee-badge {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .offer-section {
+      text-align: center;
+      background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.1) 0%, rgba(9, 13, 22, 1) 80%);
+      padding: 70px 0;
+    }
+
+    .price-container {
+      margin: 25px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+    }
+
+    .new-price {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--gold-primary);
+      display: block;
+      margin-top: 5px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p.subtitle {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .btn-cta {
+        font-size: 1.05rem;
+        padding: 18px 20px;
+      }
+      .new-price {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <div class="bg-glow">
+    <section class="hero">
+      <div class="container">
+        <span class="hero-badge">Método Prático e Comprovado</span>
+        <h1>De Zero a Riqueza: O Caminho Simples Para Você Ganhar Mais Dinheiro, Mesmo Começando do Nada</h1>
+        <p class="subtitle">Descubra as estratégias práticas para mudar sua mentalidade, criar novas rendas, organizar suas finanças e construir a liberdade financeira que você merece.</p>
+        
+        <div class="hero-img-container">
+          <!-- IMAGEM DA CAPA -->
+          <img src="https://i.ibb.co/JRn3xvQ7/1789157612184.jpg" alt="Capa do E-book O Caminho da Riqueza" class="book-cover">
+        </div>
+
+        <a href="https://pay.kiwify.com.br/gVkOh6Z?afid=0bjRb4mt" class="btn-cta btn-checkout">Quero Começar Agora</a>
+        <p class="cta-subtext">🔒 Acesso imediato após a compra</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- O QUE VOCÊ VAI DESCOBRIR -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">O que você vai <span>descobrir</span> neste livro:</h2>
+      <div class="grid-cards">
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <p>Como mudar sua mentalidade para começar a prosperar</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <p>Por onde começar mesmo sem dinheiro</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💡</div>
+          <p>Ideias de renda extra para aplicar hoje mesmo</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <p>Como organizar suas finanças sem sofrer</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <p>Os erros que afastam você da riqueza</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📈</div>
+          <p>Um plano prático de 3 passos para crescer</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔓</div>
+          <p>Como transformar dinheiro em liberdade</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É -->
+  <section style="background-color: rgba(17, 24, 39, 0.5);">
+    <div class="container">
+      <h2 class="section-title">Para <span>quem</span> é este livro:</h2>
+      <div class="target-list">
+        <div class="target-item">
+          <span>✓</span>
+          <p>Para quem está cansado de ficar no fim do mês sem dinheiro</p>
+        </div>
+        <div class="target-item">
+          <span>✓</span>
+          <p>Para quem quer começar uma renda extra</p>
+        </div>
+        <div class="target-item">
+          <span>✓</span>
+          <p>Para quem não sabe por onde começar a investir</p>
+        </div>
+        <div class="target-item">
+          <span>✓</span>
+          <p>Para quem quer sair do ciclo de salário e gastos</p>
+        </div>
+        <div class="target-item">
+          <span>✓</span>
+          <p>Para quem quer construir um futuro mais tranquilo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Quem leu, <span>recomenda</span>:</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"Caminho da Riqueza me mostrou que eu não preciso de muito para começar. Apliquei as ideias e consegui minha primeira renda extra em menos de 15 dias. Recomendo muito!"</p>
+          <div class="testimonial-author">— Lucas M., empreendedor digital</div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Eu sempre achei que ganhar dinheiro era para quem já tinha dinheiro. Esse livro mudou completamente a minha forma de pensar. Hoje eu tenho controle das minhas finanças e já vejo resultados."</p>
+          <div class="testimonial-author">— Mariana S., profissional de marketing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section>
+    <div class="container">
+      <div class="guarantee-box">
+        <div class="guarantee-badge">🛡️</div>
+        <h2 class="section-title" style="margin-bottom: 15px;">Garantia Incondicional de 7 Dias</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Se você aplicar as ideias e não ver valor no conteúdo, devolvemos 100% do seu dinheiro sem perguntas e sem complicação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA FINAL -->
+  <section class="offer-section">
+    <div class="container">
+      <h2 class="section-title">Sua oportunidade de mudar de vida hoje</h2>
+      <p style="color: var(--text-muted); font-size: 1.1rem;">Você pode continuar como está, ou pode começar hoje a construir o caminho para a sua riqueza.</p>
+      
+      <div class="price-container">
+        <span class="old-price">De R$ 97,00</span>
+        <span class="new-price">Por apenas R$ 47,00</span>
+      </div>
+
+      <a href="t" class="btn-cta btn-checkout">Quero Garantir Meu Acesso Agora</a>
+      <p class="cta-subtext">⚡ Acesso imediato via e-mail após a confirmação</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© O Caminho da Riqueza. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT AUTOMÁTICO DE REPASSE DE UTMS E SRC -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const botoes = document.querySelectorAll(".btn-checkout");
+      
+      if (urlParams.toString().length > 0) {
+        botoes.forEach(function (botao) {
+          let urlDestino = new URL(botao.href);
+          urlParams.forEach((value, key) => {
+            urlDestino.searchParams.set(key, value);
+          });
+          botao.href = urlDestino.toString();
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
